@@ -1,0 +1,121 @@
+.App {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(comp/images/wallpaper.jpg);
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
+}
+
+.about{
+            position: absolute;
+            top: -8%;
+            right: 2%;
+            width: 10%;
+            height: 5%;
+            background-color: aliceblue;
+            font-size: 26px;
+            border: none;
+            cursor: pointer;
+            border-radius: 7px;
+            text-align: center;
+            color: black;
+}
+
+ .about:hover {
+            background-color: #f9e8af;
+            color: black;
+        }
+
+
+.background{
+    left:80px;
+    top:100px;
+    margin: auto;
+    position: absolute;
+}
+.vidDisplay{
+    left:383px;
+    top:290px;
+   
+    margin: auto;
+    position: absolute;
+}
+
+.bubble{
+    left:846px;
+    top:145px;
+    position: absolute;
+    z-index: 2;
+}
+
+.smallscreen{
+    left:806px;
+    top:542px;
+    position: absolute;
+    z-index: 2;
+}
+
+.us{
+    left:875px;
+    top:572px;
+    width: 253.039px;
+    height: 173.54px;
+    position: absolute;
+    z-index: 2;
+}
+
+.App-intro{
+    left:0;
+    right: 0;
+    top:780px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+}
+
+.chatbox{
+    left:383px;
+    top:290px;
+    width: 500px;
+    height: 700px;
+    margin: auto;
+    position: absolute;
+}
+
+.App-title{
+    position: absolute;
+    left: 0;
+    top:0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+      
+/*
+    background: -webkit-linear-gradient(#F0C444, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+*/
+    
+}
+.App-display{
+    position: absolute;
+    left: 0;
+    top:10%;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 90%; 
+}
