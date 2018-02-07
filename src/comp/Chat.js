@@ -143,7 +143,7 @@ joinChat(){
             mode:1,
         })
 
-        this.socket = mySocket("http://localhost:10001");
+        this.socket = mySocket("https://adcd-monetwork-socket.herokuapp.com/");
         this.socket.emit("uname", this.state.myname);
         this.socket.on("names",(data)=>{
             this.setState({
