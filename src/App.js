@@ -9,49 +9,71 @@ class App extends Component {
          super(props);
           this.state = {
             changePages:1,
-            panelButton: true
           
+            menuDisplays: false
         }
 
          this.changePage = this.changePage.bind(this);
          this.aboutPage = this.aboutPage.bind(this);
-         this.panelButton = this.panelButton.bind(this);
+        
+         this.menuDisplay = this.menuDisplay.bind(this);
+         this.chatPage = this.chatPage.bind(this);
+         this.homePage = this.homePage.bind(this);
      }
     
 changePage(bool){
-        //changes the state for changePages
+    
         var arg = bool;
         this.setState({changePages:arg})
     }
-aboutPage(){
-    this.setState({changePages:2});
     
-    this.panelButton();
-}
+menuDisplay(bool){
+        var arg = bool;
+        this.setState({menuDisplays:arg})
+    }  
+
     
 
-panelButton(){
-    if(this.setState.panelButton == true){
-        this.setState({panelButton:false})
-        
-    }
     
-    else(
-         this.setState({panelButton:true})
-    )
-}
-    
+homePage(){
+    this.setState({changePages:1});
+      this.setState({menuDisplays:0});
+     this.setState({ modes:0});
+}    
+chatPage(){
+    this.setState({changePages:1});
+  
+}  
+aboutPage(){
+    this.setState({changePages:3});
+}    
 
   render() {
-   
+      
+       var menuShow = null;
+      
+      if(this.state.menuDisplays === true){ 
+        menuShow = ( 
+         <div className="App-menu">
+               <div className="App-menuButs">
+
+                <button className="Menu-But" onClick={this.chatPage}>CHAT</button>
+                <button className="Menu-But" onClick={this.aboutPage}>ABOUT</button>    
+         </div>
+             </div>
+             ) 
+         } 
+      
       var pageDisplay = null;
         if(this.state.changePages == 1){
               pageDisplay = (
-              <Chat panelButton={this.state.panelButton}/>
+              <Chat 
+                    menuDisplay={this.menuDisplay}
+                 />
               )
-        }else if(this.state.changePages == 2){
+        }else if(this.state.changePages == 3){
              pageDisplay = (
-              <About changePage={this.changePage} panelButton={this.panelButton}/>
+              <About changePage={this.changePage}/>
               ) 
         }
       
@@ -60,9 +82,10 @@ panelButton(){
        <div className="App-title">
           <h1 >Welcome to Alex and Ben's Landing Page</h1>
          </div>
+         {menuShow}
      <div className="App-display">
                  {pageDisplay}
-        <button className="about" onClick={this.aboutPage}>ABOUT</button>
+    
       </div>
   
       </div>
