@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Chat from './comp/Chat';
 import About from './comp/About';
+import Maze from './comp/Maze';
 
 class App extends Component {
     
@@ -19,6 +20,7 @@ class App extends Component {
          this.menuDisplay = this.menuDisplay.bind(this);
          this.chatPage = this.chatPage.bind(this);
          this.homePage = this.homePage.bind(this);
+         this.mazePage = this.mazePage.bind(this);
      }
     
 changePage(bool){
@@ -46,7 +48,11 @@ chatPage(){
 }  
 aboutPage(){
     this.setState({changePages:3});
-}    
+}
+mazePage(){
+    this.setState({changePages:4});
+//     this.setState({menuDisplays:0});
+}
 
   render() {
       
@@ -59,6 +65,7 @@ aboutPage(){
 
                 <button className="Menu-But" onClick={this.chatPage}>CHAT</button>
                 <button className="Menu-But" onClick={this.aboutPage}>ABOUT</button>    
+                <button className="Menu-But" onClick={this.mazePage}>GAME</button>    
          </div>
              </div>
              ) 
@@ -75,6 +82,11 @@ aboutPage(){
              pageDisplay = (
               <About changePage={this.changePage}/>
               ) 
+        }else if(this.state.changePages == 4){
+            pageDisplay= (
+            <Maze changePage={this.changePage}
+                 menuDisplay={this.menuDisplay}/>
+                )
         }
       
     return (
